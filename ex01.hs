@@ -1,7 +1,8 @@
+-- exercício 1
 
-par :: Int -> Bool
-par num | num `mod` 2 == 0 = True
-        | otherwise = False
+impar :: Int -> Bool
+impar num | num `mod` 2 == 0 = False
+          | otherwise = True
 
 ordena :: [Int] -> [Int]
 ordena [] = []
@@ -18,8 +19,11 @@ ordenaCompleta xs |xs == xs' = xs
 ordenadaPares ::([Int] -> [Int]) -> (Int -> Bool) -> [Int] -> [Int]
 ordenadaPares funca funcb lista = [x | x <- funca (lista), funcb x]
 
+-- exercício 2
+
+
 main :: IO()
 main = do
     let a = (+1)
     let b = 90
-    print(ordenadaPares ordenaCompleta par [9,2,3,4])
+    print(ordenadaPares ordenaCompleta impar [9,2,3,4])
